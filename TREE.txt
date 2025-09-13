@@ -1,0 +1,56 @@
+analisis-titulacion-los-rios/
+├── .env
+├── .flake8
+├── .gitignore
+├── .venv/
+├── README.md
+├── data/
+│   ├── clean/
+│   │   ├── titulacion_los_rios_clean_1753653642.csv
+│   │   ├── titulacion_los_rios_sexo.csv
+│   │   ├── titulacion_los_rios_tipo.csv
+│   │   └── titulacion_los_rios_total.csv
+│   ├── processed/
+│   │   ├── carreras_summary_20250727_1829.csv
+│   │   ├── instituciones_summary_20250727_1829.csv
+│   │   ├── niveles_summary_20250727_1829.csv
+│   │   └── temporal_summary_20250727_1829.csv
+│   └── raw/
+│       └── Informe_Titulacion_2024_SIES_.xlsx
+├── demo.sh
+├── logs/
+├── main.py
+├── notebooks/
+│   └── Analisis_titulacion_los_rios.ipynb
+├── pyproject.toml
+├── requirements.txt
+├── src/
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py
+│   ├── data_pipeline/
+│   │   ├── __init__.py
+│   │   ├── exceptions.py
+│   │   ├── extractors/
+│   │   │   ├── __init__.py
+│   │   │   └── excel_extractor.py
+│   │   ├── interfaces.py
+│   │   ├── loaders/
+│   │   │   ├── __init__.py
+│   │   │   └── csv_loader.py
+│   │   ├── models.py
+│   │   ├── transformers/
+│   │   │   ├── __init__.py
+│   │   │   ├── data_cleaner.py
+│   │   │   └── regional_filter.py
+│   │   ├── utils/
+│   │   │   ├── __init__.py
+│   │   │   └── logger.py
+│   │   └── validators/
+│   │       ├── __init__.py
+│   │       └── data_quality_validator.py
+│   └── etl_pipeline.py
+├── tests/
+│   ├── conftest.py
+│   ├── test_extractors.py
+│   └── test_transformers.py

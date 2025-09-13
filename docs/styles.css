@@ -1,0 +1,429 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+/* Header principal */
+.main-header {
+    background: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid #e8e8e8;
+    position: relative;
+}
+
+/* Logo en esquina superior derecha - ahora movido a la izquierda junto al otro */
+.header-logo {
+    position: absolute;
+    top: 45px;
+    left: 200px; /* Cambiado de right: 120px a left: 200px para ponerlo junto al otro logo */
+    height: 55px; /* Reducido de 65px a 55px para ser más proporcional */
+    width: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* Logo Universidad Austral - Parte superior izquierda */
+.header-logo-left {
+    position: absolute;
+    top: 45px;
+    left: 80px; /* Movido más hacia la izquierda para dar espacio al segundo logo */
+    height: 85px; /* Aumentado de 75px a 85px para hacerlo más grande */
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+    opacity: 1;
+}
+
+.header-logo-left:hover {
+    opacity: 1;
+}
+
+.main-title {
+    font-size: 28px;
+    font-weight: normal;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    margin-top: 20px; /* Reducido de 40px a 20px */
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+    margin-top: 5px; /* Añadido margen superior para bajar el subtítulo */
+}
+
+/* Navegación */
+.nav-container {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #1B4F72;
+    color: white;
+}
+
+/* Container principal */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Secciones */
+.section {
+    margin-bottom: 80px;
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    border-bottom: 3px solid #1B4F72;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.chart-section {
+    margin-bottom: 60px;
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+/* Estilos para tendencias temporales */
+.trends-container {
+    max-width: 1200px; /* Aumentado de 800px a 1200px */
+    margin: 0 auto;
+}
+
+/* Mejoras para las visualizaciones */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Alto grande para gráficos principales (desktop) */
+.chart-container--tall {
+    height: 800px;
+}
+
+.chart-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+canvas.chart-svg {
+    border-radius: 8px;
+}
+
+/* Plotly container debe ocupar todo el contenedor */
+.plot-fill {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para empresas por comuna */
+.empresas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bar-chart-svg {
+    width: 100%;
+    height: 700px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+}
+
+/* Estilos para análisis de rubros */
+.rubros-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Placeholder para gráficos */
+.chart-placeholder {
+    background: #f8f9fa;
+    border: 2px dashed #e8e8e8;
+    border-radius: 4px;
+    padding: 60px 30px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.chart-placeholder .placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.5;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-family: 'Georgia', serif;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+    white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+    background: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #e8e8e8;
+    margin-top: 60px;
+}
+
+/* Logo Universidad Austral en el footer centrado */
+.footer-logo {
+    height: 80px; /* Aumentado de 70px a 80px */
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .trends-container {
+        max-width: 95%;
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 50px 20px 40px 20px; /* Aumentado padding-top de 40px a 50px */
+    }
+    
+    .main-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: 10px; /* Agregado margen superior */
+    }
+    
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .nav-link {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 20px 10px;
+    }
+    
+    .chart-container {
+        height: 500px !important; /* Altura uniforme para móviles */
+        margin-bottom: 30px;
+    }
+    
+    .chart-title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .trends-container {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .rubros-container {
+        max-width: 100%;
+    }
+    
+    /* Logo responsive para tablets */
+    .header-logo {
+        height: 42px; /* Reducido de 50px a 42px para ser más proporcional */
+        top: 35px; /* Más cerca del título en tablets */
+        left: 140px; /* Cambiado de right a left y ajustado */
+    }
+    
+    .header-logo-left {
+        height: 65px; /* Aumentado de 58px a 65px */
+        top: 35px; /* Más cerca del título en tablets */
+        left: 40px; /* Ajustado para tablet */
+    }
+    
+    .footer-logo {
+        height: 65px; /* Aumentado de 55px a 65px */
+        margin-top: 15px;
+    }
+    
+    .footer {
+        padding: 30px 15px; /* Restaurar padding normal para móviles pequeños */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Media query intermedia para transición suave */
+    .header-logo {
+        left: 120px; /* Cambiado de right a left */
+        height: 38px; /* Reducido para mantener proporción */
+    }
+    
+    .header-logo-left {
+        left: 30px; /* Posición intermedia */
+        height: 55px; /* Aumentado para mantener prominencia */
+    }
+    
+    .main-title {
+        font-size: 20px; /* Tamaño intermedio */
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 55px 20px 40px 20px; /* Aumentado padding-top de 40px a 55px */
+    }
+    
+    .main-title {
+        font-size: 18px;
+        padding: 0 10px;
+        margin-top: 15px; /* Agregado margen superior mayor */
+    }
+    
+    .section-title {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+    
+    .nav-links {
+        gap: 8px;
+        padding: 8px;
+    }
+    
+    .nav-link {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .container {
+        padding: 15px 5px;
+    }
+    
+    .chart-container {
+        height: 400px !important; /* Altura más pequeña para móviles pequeños */
+        border-radius: 4px;
+    }
+    
+    .chart-title {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .footer {
+        padding: 30px 15px; /* Restaurar padding normal */
+    }
+    
+    .footer-text {
+        font-size: 12px;
+    }
+    
+    /* Logo responsive para móviles pequeños */
+    .header-logo {
+        height: 30px; /* Reducido de 35px a 30px para ser más proporcional */
+        top: 25px; /* Más cerca del título en móviles */
+        left: 85px; /* Cambiado de right a left */
+    }
+    
+    .header-logo-left {
+        height: 50px; /* Mantenido más grande que el derecho */
+        top: 25px; /* Más cerca del título en móviles */
+        left: 15px; /* Cerca del borde izquierdo */
+    }
+    
+    .footer-logo {
+        height: 55px; /* Aumentado de 45px a 55px */
+        margin-top: 12px;
+    }
+}

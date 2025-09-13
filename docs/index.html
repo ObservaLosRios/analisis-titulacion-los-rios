@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Titulación - Región de Los Ríos | Visualización Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+</head>
+<body>
+    <!-- Header Principal -->
+    <header class="main-header">
+        <img src="thumbnail_images.png" alt="Logo Región de Los Ríos" class="header-logo">
+        <img src="thumbnail_Logo observa.png" alt="Universidad Austral de Chile - Centro de Estudios Regionales" class="header-logo-left">
+        <h1 class="main-title">Análisis de Titulación - Región de Los Ríos</h1>
+        <p class="subtitle">Evolución de Profesionales Titulados (2007-2024)</p>
+    </header>
+    
+    <!-- Navegación -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-section="seccion1">Evolución Total</a>
+            <a href="#" class="nav-link" data-section="seccion2">Por Tipo</a>
+            <a href="#" class="nav-link" data-section="seccion3">Por Sexo</a>
+        </div>
+    </nav>
+    
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Sección 1: Evolución de Titulaciones Totales -->
+        <section id="seccion1" class="section active">
+            <h2 class="section-title">Evolución de Titulaciones en Los Ríos (2007-2024)</h2>
+            
+            <div class="trends-container">
+                <!-- Gráfico Principal -->
+                <div class="chart-section">
+                    <div class="chart-title">Número total de profesionales titulados por año</div>
+                    <div class="chart-container chart-container--tall">
+                        <div id="titulacionPlot" class="plot-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección 2: Titulaciones por Tipo -->
+        <section id="seccion2" class="section">
+            <h2 class="section-title">Evolución de Titulaciones por Tipo en Los Ríos (2007-2024)</h2>
+            
+            <div class="empresas-container">
+                <div class="chart-section">
+                    <div class="chart-title">Pregrado, Posgrado y Postítulo</div>
+                    <div class="chart-container chart-container--tall">
+                        <canvas id="tipoChart" class="chart-svg"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección 3: Titulaciones por Sexo -->
+        <section id="seccion3" class="section">
+            <h2 class="section-title">Evolución de Titulaciones por Sexo en Los Ríos (2007-2024)</h2>
+            
+            <div class="rubros-container">
+                <div class="chart-section">
+                    <div class="chart-title">Comparación entre Hombres y Mujeres</div>
+                    <div class="chart-container chart-container--tall">
+                        <canvas id="sexoChart" class="chart-svg"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            Análisis desarrollado por proyecto Observa<br>
+            Valdivia. Región de Los Ríos - Chile | 2007-2024
+        </p>
+        <img src="thumbnail_logo cer.png" alt="Universidad Austral de Chile - Centro de Estudios Regionales" class="footer-logo">
+    </footer>
+
+    <!-- Tooltip global -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- Scripts -->
+    <script src="titulacion.js"></script>
+</body>
+</html>
