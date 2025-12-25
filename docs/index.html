@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análisis de Titulación - Región de Los Ríos | Visualización Interactiva</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/full-screen.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 </head>
 <body>
@@ -35,7 +39,6 @@
             <div class="trends-container">
                 <!-- Gráfico Principal -->
                 <div class="chart-section">
-                    <div class="chart-title">Número total de profesionales titulados por año</div>
                     <div class="chart-container chart-container--tall">
                         <div id="titulacionPlot" class="plot-fill"></div>
                     </div>
@@ -49,9 +52,8 @@
             
             <div class="empresas-container">
                 <div class="chart-section">
-                    <div class="chart-title">Pregrado, Posgrado y Postítulo</div>
                     <div class="chart-container chart-container--tall">
-                        <canvas id="tipoChart" class="chart-svg"></canvas>
+                        <div id="tipoChart" class="chart-svg"></div>
                     </div>
                 </div>
             </div>
@@ -63,9 +65,8 @@
             
             <div class="rubros-container">
                 <div class="chart-section">
-                    <div class="chart-title">Comparación entre Hombres y Mujeres</div>
                     <div class="chart-container chart-container--tall">
-                        <canvas id="sexoChart" class="chart-svg"></canvas>
+                        <div id="sexoChart" class="chart-svg"></div>
                     </div>
                 </div>
             </div>
