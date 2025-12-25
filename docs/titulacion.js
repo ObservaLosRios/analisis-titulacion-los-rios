@@ -3,6 +3,8 @@
 // Titulación Los Ríos – visualizaciones en Highcharts
 (() => {
   // ============================ DATOS ============================
+  const REGION_LABEL = "Región de Los Ríos";
+
   const dataTitulaciones = [
     { año: 2007, total: 1757 },
     { año: 2008, total: 1800 },
@@ -202,20 +204,20 @@
     destroyChart("total");
     chartInstances.total = window.Highcharts.chart("titulacionPlot", {
       ...getCommonChartOptions({
-        title: "U.S Solar Employment Growth",
-        subtitle: 'By Job Category. Source: <a href="https://irecusa.org/programs/solar-jobs-census/" target="_blank">IREC</a>.',
-        yAxisTitle: "Number of Employees"
+        title: `Evolución de Titulaciones en ${REGION_LABEL} (2007-2024)`,
+        subtitle: `${REGION_LABEL}. Número total de profesionales titulados por año`,
+        yAxisTitle: "Número de Titulados"
       }),
       // Mantener los datos/colores del proyecto, solo se aplica la plantilla
-      title: { text: "Evolución de Titulaciones en Los Ríos (2007-2024)", align: "left" },
-      subtitle: { text: "Número total de profesionales titulados por año", align: "left" },
+      title: { text: `Evolución de Titulaciones en ${REGION_LABEL} (2007-2024)`, align: "left" },
+      subtitle: { text: `${REGION_LABEL}. Número total de profesionales titulados por año`, align: "left" },
       yAxis: { title: { text: "Número de Titulados" } },
       xAxis: {
         ...getCommonChartOptions({ title: "", subtitle: "", yAxisTitle: "" }).xAxis,
         plotLines: [addCovidPlotLine()]
       },
       series: [{
-        name: "Titulaciones",
+        name: REGION_LABEL,
         color: colorTotal,
         lineWidth: 3,
         marker: { radius: 4 },
@@ -232,8 +234,8 @@
     destroyChart("tipo");
     chartInstances.tipo = window.Highcharts.chart("tipoChart", {
       ...getCommonChartOptions({
-        title: "Evolución de Titulaciones por Tipo en Los Ríos (2007-2024)",
-        subtitle: "Pregrado, Posgrado y Postítulo",
+        title: `Evolución de Titulaciones por Tipo en ${REGION_LABEL} (2007-2024)`,
+        subtitle: `${REGION_LABEL}. Pregrado, Posgrado y Postítulo`,
         yAxisTitle: "Número de Titulados"
       }),
       xAxis: {
@@ -268,8 +270,8 @@
     destroyChart("sexo");
     chartInstances.sexo = window.Highcharts.chart("sexoChart", {
       ...getCommonChartOptions({
-        title: "Evolución de Titulaciones por Sexo en Los Ríos (2007-2024)",
-        subtitle: "Comparación entre Hombres y Mujeres",
+        title: `Evolución de Titulaciones por Sexo en ${REGION_LABEL} (2007-2024)`,
+        subtitle: `${REGION_LABEL}. Comparación entre Hombres y Mujeres`,
         yAxisTitle: "Número de Titulados"
       }),
       xAxis: {
